@@ -234,7 +234,7 @@
 
 <script>
 async function addPatient() {
-  await fetch("https://your-render-url/add-patient", {
+  await fetch("https://clinic-site-ysbc.onrender.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -284,7 +284,7 @@ async function download() {
 
 	<script>
 async function loadPatients() {
-  const res = await fetch("https://your-render-url/patients");
+  const res = await fetch("https://clinic-site-ysbc.onrender.com");
   const data = await res.json();
 
   const table = document.querySelector("#patientsTable tbody");
