@@ -267,6 +267,46 @@ async function download() {
 }
 </script>
 
+<h2>Patients List</h2>
 
+<table border="1" id="patientsTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Treatment</th>
+      <th>Total</th>
+      <th>Paid</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+	<script>
+async function loadPatients() {
+  const res = await fetch("https://your-render-url/patients");
+  const data = await res.json();
+
+  const table = document.querySelector("#patientsTable tbody");
+  table.innerHTML = "";
+
+  data.forEach(p => {
+    const row = `
+      <tr>
+        <td>${p.name}</td>
+        <td>${p.treatment}</td>
+        <td>${p.total_amount}</td>
+        <td>${p.paid_amount}</td>
+        <td>${p.balance}</td>
+      </tr>
+    `;
+    table.innerHTML += row;
+  });
+}
+
+// load automatically when page opens
+loadPatients();
+</script>
+	
   </body>
 </html>
