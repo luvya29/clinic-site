@@ -1,0 +1,4 @@
+"scripts": {
+  "build": "...",
+  "start": "node index.js"
+}
