@@ -1,0 +1,254 @@
+ body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Top bar */
+    .top-bar {
+        background: #f2f2f2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 30px;
+        font-size: 16px;
+        flex-wrap: wrap;
+    }
+    .top-bar .left, .top-bar .right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .top-bar a {
+	margin-right:20px;
+	margin-left:20px;
+        color: #333;
+        text-decoration: none;
+    }
+    .top-bar i {
+        color: #359997;
+    }
+
+    /* Logo + Menu */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        flex-wrap: wrap;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #359997;
+    }
+    .tagline {
+        font-size: 18px;
+        color: #888;
+    }
+
+    @media (max-width: 768px) {
+        .top-bar {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+        .header {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+}
+
+  /* NAV: keep horizontal always */
+  nav { min-width: 0; /* allow shrink inside flex parent */ }
+  /* wrapper enables horizontal scroll on small screens */
+  .nav-wrapper {
+    overflow-x:auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-wrapper::-webkit-scrollbar { height:6px; } /* small scrollbar for visual */
+  .nav-ul {
+    display:flex;
+    gap:28px;                /* spacing between items */
+    margin:0;
+    padding:0;
+    list-style:none;
+    align-items:center;
+    flex-wrap:nowrap;        /* <-- prevent stacking */
+  }
+  .nav-ul li { flex: 0 0 auto; } /* don't let items stretch/wrap */
+  .nav-ul a {
+    display:block;
+    padding:8px 0;
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    white-space:nowrap;      /* <-- prevents label wrap */
+  }
+
+  /* small screens: reduce gaps & font size but KEEP horizontal */
+  @media (max-width: 768px) {
+    .top-bar { padding:8px 16px; font-size:13px; }
+    .header { padding:10px 16px; gap:12px; }
+    .nav-ul { gap:16px; font-size:15px; }
+    .logo img { height:40px; }
+  }
+
+  /* If some external stylesheet (eg. bootstrap) forces column, use this override as last resort */
+  /* Uncomment only if needed: */
+  /*
+  header nav .nav-ul {
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+  }
+  header nav .nav-ul li { display:inline-block !important; }
+  */
+
+
+
+.contact-header {
+    width: 100%;
+    background-color: #2b7a78; /* teal shade */
+    display: flex;
+    align-items: center;      /* center vertically */
+    justify-content: center;  /* center horizontally */
+    padding: 3rem 0;          /* top/bottom space */
+    margin: 0;                /* remove any gaps */
+}
+
+  
+
+
+.contact-header h1 {
+    color: white;
+        font-size: 3rem; /* big bold style */
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+    
+}
+
+
+
+
+.footer {
+  background-color: #2b7a78;
+  color: #fff;
+  padding: 2rem 1rem;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: left;
+  position: relative;
+}
+
+.footer-left,
+.footer-right {
+  max-width: 500px;
+}
+
+.footer-divider {
+  width: 4px;
+  background: #e01c36;
+  border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Match text's upper/lower bounds */
+  top: 2rem;            /* adjust to align exactly with text top */
+  height: calc(100% - 4rem);  /* adjust so it stops at last line; 4rem total for top + bottom */
+  z-index: 2;
+}
+
+@media (max-width: 800px) {
+  .footer-divider {
+    display: none;
+  }
+}
+
+
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-location span {
+  white-space: nowrap;  /* Prevents breaking into next line */
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-social img {
+   width: 18px;height: 18px;
+margin-left: -1px;
+  filter: brightness(0) invert(1); /* makes them white */
+}
+
+.footer-socials img {
+   width: 25px;height: 25px;
+margin-left: -6px;
+  filter: brightness(0) invert(1); /* makes them white */
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-icon {
+  color: white;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+.footer-insta{
+color: white;
+  text-decoration: none;
+margin-top:-8px ;
+}
+
+
+.footer-fb{
+color: white;
+  text-decoration: none;
+margin-top:-3px ;
+margin-left:-12px;
+}
+
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+

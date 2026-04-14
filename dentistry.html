@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balaji Polyclinic</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+
+<style>
+ body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+
+    .team-section {
+      text-align: center;
+      padding: 10px 10px;
+    }
+
+    .team-section h1 {
+      font-size: 2.5rem;
+      color: #226666; /* teal shade */
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .team-section .underline {
+      width: 40px;
+      height: 2px;
+      background-color: #333;
+      margin: 10px auto 20px auto;
+    }
+
+
+    .team-section p {
+      font-size: 1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 10px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .team-card {
+      background-color: #def2f1;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .team-card img {
+	align-item:center;
+      width: 380px;
+      height: 320px;
+      display: block;
+    }
+
+    .team-info {
+      padding: 20px;
+    }
+
+    .team-info h4 {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .team-info h2 {
+      margin: 5px 0;
+      font-size: 20px;
+      color: #2b6d6d;
+    }
+
+    .team-info p {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0 15px;
+    }
+
+    .social-icons a {
+      color: black;
+      margin-right: 10px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+.clients-section {
+  background-color: #d3d3d3;   /* light gray background */
+  text-align: center;          /* center the heading */
+  padding: 60px 20px;          /* space around text */
+}
+
+.clients-section h2 {
+  font-size: 3rem;             /* large heading */
+  font-weight: 500;
+  color: #006d68;              /* teal color */
+  margin: 0;                   /* remove default margin */
+  font-family: 'Raleway', sans-serif; /* modern font */
+}
+
+
+
+  .testimonial-container {
+    background-color: #d3d3d3;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 75vh;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .arrow {
+    font-size: 24px;
+    color: #2b6d6d;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+  }
+
+  .testimonial-box {
+    background: white;
+    padding: 20px;
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #2b6d6d;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+    position: absolute;
+    left: 100px;
+  }
+
+  .testimonial-box.active {
+    opacity: 1;
+    transform: translateX(0);
+    position: static;
+  }
+
+  .testimonial-box p {
+    margin: 0 0 20px 0;
+  }
+
+  .author {
+    font-size: 16px;
+    font-weight: normal;
+    color: #2b6d6d;
+  }
+
+  .testimonial-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .testimonial-image img {
+    max-width: 500px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    object-fit: cover;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+    position: absolute;
+    right: 100px;
+  }
+
+  .testimonial-image.active img {
+    opacity: 1;
+    transform: translateX(0);
+    position: static;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #2b6d6d;
+    border-radius: 50%;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-container {
+      flex-direction: column;
+      padding: 20px;
+    }
+    .testimonial-box, .testimonial-image {
+      position: static;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .testimonials {
+    margin: 0;
+    padding: 30px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+   
+  }
+
+  .testimonial {
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    text-decoration: none; /* Remove link underline */
+    display: block; /* Make the anchor fill the card */
+    color: inherit; /* Keep text color */
+    
+  }
+
+
+  .quote {
+    font-size: 69px;
+    color: #2b908f;
+    margin-bottom: 15px;
+  }
+
+  .name {
+    font-size: 25px;
+    color: #2b908f;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .text {
+    font-size: 16px;
+    color: #2b908f;
+    line-height: 1.5;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="left">
+        <i class="fas fa-map-marker-alt icon"></i>
+        <a href="https://g.co/kgs/E7hs7y7">National Highway 1A Patli Morh, Samba,<br/> Jammu and Kashmir Pincode-181133</a>
+    </div>
+    <div class="right">
+        <i class="fas fa-phone icon"></i>
+        <a href="tel:8082232088">8082232088</a>
+    </div>
+</div>
+
+<!-- Logo + Menu -->
+<div class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <div>
+            <div class="logo-text">BALAJI POLYCLINIC</div>
+            <div class="tagline">Consultation & Diagnostics</div>
+        </div>
+    </div>
+    <nav aria-label="Primary navigation">
+      <div class="nav-wrapper">
+        <ul class="nav-ul">
+          <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+	 <li><a href="team.html">Team</a></li>
+        <li><a href="dentistry.html">Dentistry</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+</div>
+  </header>
+
+
+<!-- Header Section -->
+<section class="contact-header">
+  <h1>Dentistry</h1>
+</section>
+
+
+ <section class="team-section">
+    <h1>Meet the Team</h1>
+    <div class="underline"></div>
+    <p>
+      Our skilled dental team combines expertise with care, offering modern treatments in a hygienic, patient-first environment for healthy, confident smiles.
+    </p>
+  </section>
+
+
+<div class="team-container">
+    <div class="team-card">
+      <img src="dentistry/doc1.png" alt="DR">
+      <div class="team-info">
+        <h4>DENTAL SURGEON</h4>
+        <h2>Dr Mohit Gupta</h2>
+        <p>Experienced Dental Surgeon with expertise in restorative dentistry and preventive care. Passionate about modern techniques and committed to creating healthy, confident smiles.</p>
+        <div class="social-icons">
+          <a href="contact.html"><i class="fab fa-facebook"></i></a>
+          <a href="contact.html"><i class="fab fa-twitter"></i></a>
+          <a href="contact.html"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <img src="dentistry/doc2.png" alt="DR">
+      <div class="team-info">
+        <h4>DENTAL SURGEON & IMPLANTOLOGIST</h4>
+        <h2>Dr Shikha Sharma</h2>
+        <p>BDS from GDC Kathua with years of public serving experience. Dedicated Dental Surgeon & Implantologist providing advanced, patient-focused care.</p>
+        <div class="social-icons">
+          <a href="contact.html"><i class="fab fa-facebook"></i></a>
+          <a href="contact.html"><i class="fab fa-twitter"></i></a>
+          <a href="contact.html"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+
+
+<section class="clients-section">
+  <h2>Our Patients Say</h2>
+</section>
+
+
+<div class="testimonial-container">
+
+
+  <div class="arrow" id="prev"><i class="fas fa-arrow-left"></i></div>
+
+  <!-- Testimonial 1 -->
+  <div class="testimonial-box active">
+    <p>"From battling those stubborn sugar bugs to showing off bright, healthy teeth 🌟 <br>
+Look at this amazing transformation – a big happy smile shining with confidence 😁 <br>
+Healthy teeth make every kid’s laughter brighter and stronger 🦷✨" </p>
+    <div class="author"></div>
+  </div>
+  <div class="testimonial-image active">
+    <img src="dentistry/test1.png" alt="testimonial1">
+  </div>
+
+  <!-- Testimonial 2 -->
+  <div class="testimonial-box">
+    <p>“Working with this team was an absolute pleasure. They understood our needs and delivered beyond expectations.”</p>
+    <div class="author">Michael Chen, CEO</div>
+  </div>
+  <div class="testimonial-image">
+    <img src="dentistry/test2.png" >
+  </div>
+
+  <!-- Testimonial 3 -->
+  <div class="testimonial-box">
+    <p>“Their creativity and professionalism really stood out. I highly recommend their services.”</p>
+    <div class="author">Sarah Lee, Marketing Director</div>
+  </div>
+  <div class="testimonial-image">
+    <img src="dentistry/test3.png" >
+  </div>
+
+  <div class="arrow" id="next"><i class="fas fa-arrow-right"></i></div>
+
+  <div class="dots">
+    <div class="dot active" data-index="0"></div>
+    <div class="dot" data-index="1"></div>
+    <div class="dot" data-index="2"></div>
+  </div>
+</div>
+
+
+    <section class="team-section">
+    <a href="https://share.google/ktRtIJvRkuPYtfoKb"><h1>Google reviews</h1>
+    </section>	</a>
+
+ 
+<div class="testimonials">
+  <a href="https://share.google/5oKKuiaSihrgOpXkm" class="testimonial">
+    <div class="quote">❝</div>
+    <div class="name">Sahil Gupta</div>
+    <div class="text">“Dr. Mohit is a very professional and skilled doctor. He has a great deal of experience, and he always takes the time to explain his recommendations and answer any questions I have.
+The clinic is equipped with latest technology, so it's very hygenic. He always suggests the best treatment for my condition, which is really helpful because it helps me feel confident in knowing that I'll be getting the best care possible!”</div>
+  </a>
+
+<a href="https://share.google/UnvDOriQ9jVQi636d" class="testimonial">
+    <div class="quote">❝</div>
+    <div class="name">Suprith Gowda</div>
+    <div class="text">"I have always hated going to the dentist.
+Balaji dental clinic is perfect abode to make your smile beautiful. They uses state of the art technology that is painless, efficient and the ambience is modern pleasant and hygiene.Clinic ensures that coming to the dentist a real treat and has bequeath me with a beautiful sparkling smile!'
+Staff are very friendly, knowledgeable, efficient, and gentle. They have state of the art technology, modern equipment and gentle bedside manner."</div>
+</a>  
+
+<a href="https://share.google/P35kYhxKllfvOV5y7" class="testimonial">
+    <div class="quote">❝</div>
+    <div class="name">Sanjay Pandey</div>
+    <div class="text">“When most of the doctors told me to remove my tooth due to blister on gum, this doctor ensured me treat it without removal and he did it very nicely. I think he is best dentist, i ever met. He has all latest instrument to diagnose and treat the problems. Very pleasant person, good behaviour which is missing todays in most of the doctors. Not a griddy doctor like others. You must visit to him if having any dental problem. Half of your problem will just disappear after meeting with him.”</div>
+  </a>
+</div>
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+   <!-- Left Column -->
+    <div class="footer-left">
+      <div class="footer-location">
+        <i class="fas fa-map-marker-alt footer-icon"></i>
+        <a href="https://g.co/kgs/E7hs7y7" class="footer-link">
+          National Highway 1A Patli Morh, Samba,<br/> Jammu and Kashmir Pincode-181133
+        </a>
+      </div>
+
+      <div class="footer-social">
+
+        <a href="https://www.instagram.com/balajipolyclinic1a/?hl=en">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Instagram_white.svg" alt="Instagram"></a>
+	<a href="https://www.instagram.com/balajipolyclinic1a/?hl=en" class="footer-insta">Instagram</a>
+     	 </div>
+        
+ <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61564872581052">
+          <img src="facebook.png" alt="Facebook" ></a>
+<a href="https://www.facebook.com/profile.php?id=61564872581052" class="footer-fb" >Facebook</a>
+	
+
+      </div>
+    </div>
+    <!-- Right Column -->
+    <div class="footer-right">
+      <div class="footer-contact">
+        <i class="fas fa-phone-alt fa-flip-horizontal footer-icon"></i>
+        <a href="tel:8082232088" class="footer-link">8082232088 (Reception)</a>
+      </div>
+      <div class="footer-contact">
+        <i class="fas fa-phone-alt fa-flip-horizontal footer-icon"></i>
+        <a href="tel:9796081106" class="footer-link">9796081106 (Dental Services)</a>
+      </div>
+      <div class="footer-contact">
+        <i class="fas fa-phone-alt fa-flip-horizontal footer-icon"></i>
+        <a href="tel:9697286205" class="footer-link">9697286205</a>
+      </div>
+      <div class="footer-contact">
+        <i class="fas fa-envelope footer-icon"></i>
+        <a href="mailto:balajipolyclinic1a@gmail.com" class="footer-link">
+          balajipolyclinic1a@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+</body>
+
+<script>
+  const boxes = document.querySelectorAll('.testimonial-box');
+  const images = document.querySelectorAll('.testimonial-image');
+  const dots = document.querySelectorAll('.dot');
+  let index = 0;
+
+  function showTestimonial(i) {
+    boxes.forEach((box, idx) => {
+      box.classList.toggle('active', idx === i);
+      images[idx].classList.toggle('active', idx === i);
+      dots[idx].classList.toggle('active', idx === i);
+    });
+  }
+
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % boxes.length;
+    showTestimonial(index);
+  });
+
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + boxes.length) % boxes.length;
+    showTestimonial(index);
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      index = parseInt(dot.dataset.index);
+      showTestimonial(index);
+    });
+  });
+</script>
+
+</html>

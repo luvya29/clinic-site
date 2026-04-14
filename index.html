@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Balaji Polyclinic</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+
+<link rel="icon" type="image/png" href="/logo.png">
+
+<title>Balaji Polyclinic | Best Gynecology & Diagnostic Care</title>
+<meta name="description" content="Multispeciality Clinic, Patli Morh NH1A Jammu â€” led by Dr. Anjana Gupta, Dr. Naresh Gupta & Dr. Mohit Gupta. Offering USG, X-Ray, Lab Tests, ECG, Dental Care & specialist OPDs since 2010.">
+
+
+<style>
+
+
+
+/* Appointment Section */
+.appointment-section {
+  background-color: #2b7a78;
+  color: white;
+  padding: 40px 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.appointment-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.appointment-content h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .appointment-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .appointment-button {
+    margin-top: 24px;
+    margin-left: 0;
+    display: block;
+    text-align: center;
+}}
+
+.appointment-button {
+  background-color: rgba(0, 0, 0, 0.1); /* Slightly darker button */
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.map-container {
+        width: 90%;
+        margin: 0 auto; /* centers horizontally */
+        border-radius: 12px;
+        overflow: hidden;
+        height: 450px; /* adjust as needed */
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+
+/* Services Section */
+.services-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  font-family: 'Raleway', sans-serif;
+}
+
+.services-title {
+  font-size: 32px;
+  color: #359997;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  max-width: 300px;
+  text-align: center;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #359997;
+  color: white;
+  border-radius: 50%;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.service-heading {
+  color: #359997;
+  font-size: 20px;
+  margin:  0 10px;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #999999;
+  line-height: 1.6;
+}
+
+
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .carousel-container {
+        position: relative;
+        height: 105vh;
+        overflow: hidden;
+    }
+
+    /* Background images */
+    .carousel-slide {
+        position: absolute;
+        top: 0; left: 0;
+        width: 1550px;
+        height: 820px;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .carousel-slide.active {
+        opacity: 1;
+    }
+
+    /* Cards container */
+    .cards {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background: rgba(0, 0, 0, 0); /* transparent */
+        padding-left: 50px;
+        padding-right: 50px;
+        box-sizing: border-box;
+    }
+
+.card img {
+    width: 100%;
+    height: 180px; /* fixed height */
+    object-fit: cover; /* crops while keeping proportion */
+    border-radius: 5px 5px 0 0;
+}
+
+
+    .card {
+        background: rgba(27, 107, 107, 0.9);
+        color: white;
+        padding: 10px;
+        flex: 1;
+        margin: 10px;
+        border-radius: 5px;
+        min-width: 250px;
+    }
+
+    .card h2 {
+        margin-top: 0;
+    }
+
+    .card button {
+        background: rgba(0,0,0,0.2);
+        color: white;
+        border: none;
+        padding: 15px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+
+    /* Navigation arrows */
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2em;
+        color: white;
+        background: rgba(0,0,0,0.4);
+        padding: 10px;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .arrow.left {
+        left: 10px;
+    }
+    .arrow.right {
+        right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .cards {
+            flex-direction: column;
+        }
+    }
+
+
+</style>
+
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="left">
+        <i class="fas fa-map-marker-alt icon"></i>
+        <a href="https://g.co/kgs/E7hs7y7">National Highway 1A Patli Morh, Samba,<br/> Jammu and Kashmir Pincode-181133</a>
+    </div>
+    <div class="right">
+        <i class="fas fa-phone icon"></i>
+        <a href="tel:8082232088">8082232088</a>
+    </div>
+</div>
+
+<!-- Logo + Menu -->
+<div class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <div>
+            <div class="logo-text">BALAJI POLYCLINIC</div>
+            <div class="tagline">Consultation & Diagnostics</div>
+        </div>
+    </div>
+
+
+    <nav aria-label="Primary navigation">
+      <div class="nav-wrapper">
+        <ul class="nav-ul">
+          <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+	 <li><a href="team.html">Team</a></li>
+        <li><a href="dentistry.html">Dentistry</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+</div>
+  </header>
+
+
+
+<div class="carousel-container">
+    <div class="carousel-slide active" style="background-image: url('index/1.png');"></div>
+    <div class="carousel-slide" style="background-image: url('index/2.png');"></div>
+    <div class="carousel-slide" style="background-image: url('index/3.png');"></div>
+    <div class="carousel-slide" style="background-image: url('index/4.png');"></div>
+    <div class="carousel-slide" style="background-image: url('index/5.png');"></div>
+
+    <div class="arrow left">&#10094;</div>
+    <div class="arrow right">&#10095;</div>
+
+    <div class="cards">
+        <div class="card">
+            <h2>Gynecology</h2>
+            <p>Balaji Diagnostic Center offers the best gynecological care in town. Our experienced team provides compassionate and comprehensive services to meet the unique healthcare needs of women.</p>
+            <button>Read More</button>
+        </div>
+        <div class="card">
+            <h2>Radiology</h2>
+            <p>Our radiology department is equipped with state-of-the-art technology to provide accurate diagnostic imaging services. From X-rays to advanced imaging procedures, we ensure precise and timely results.</p>
+            <button>Read More</button>
+        </div>
+        <div class="card">
+            <h2>Dentistry</h2>
+            <p>At Balaji Diagnostic Center, we offer top-notch dental care for patients of all ages. Our skilled dentists provide a wide range of services, from routine check-ups to advanced treatments, ensuring healthy smiles for everyone.</p>
+            <button>Read More</button>
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<!-- Appointment Section -->
+<section class="appointment-section">
+  <div class="appointment-content">
+    <h2>Schedule Your Appointment</h2>
+    <a href="contact.html" class="appointment-button">Book an Appointment</a>
+  </div>
+</section>
+
+
+<br><br>
+
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d811.7952870415313!2d74.94365256959725!3d32.60714879835844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391e9f2e8e4719cd%3A0x84e079a003302bbb!2sBALAJI%20POLYCLINIC%20AND%20DIAGNOSTIC%20CENTER!5e1!3m2!1sen!2sin!4v1754680925362!5m2!1sen!2sin"
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+<br><br>
+
+<!-- Appointment Section -->
+<section class="appointment-section">
+  <div class="appointment-content">
+    <h2>Leave us a Review</h2>
+    <a href="https://g.page/r/CbsrMAOgeeCEEBM/review" class="appointment-button">Write a Review</a>
+  </div>
+</section>
+
+
+
+
+<!-- Services Section -->
+<section class="services-section">
+  <h2 class="services-title">Comprehensive Health Services</h2>
+  <div class="services-container">
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-comment-medical"></i>
+      </div>
+      <h3 class="service-heading">Accepted Health Plans</h3>
+      <p class="service-description">
+        Balaji Diagnostic Center is committed to providing comprehensive health services tailored to meet the diverse needs of our patients. We accept a wide range of health plans to ensure accessibility and affordability for all.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-user-md"></i>
+      </div>
+      <h3 class="service-heading">Trusted Diagnostic Center</h3>
+      <p class="service-description">
+        As the leading diagnostic center in the area, we are dedicated to delivering accurate and reliable diagnostic services. Our commitment to excellence has made us the number one choice for individuals and healthcare providers.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <i class="fas fa-stethoscope"></i>
+      </div>
+      <h3 class="service-heading">Expert Medical Team</h3>
+      <p class="service-description">
+        Our center is staffed with specialist doctors who are highly skilled and experienced in their respective fields. With a focus on delivering exceptional care, our team is committed to ensuring the best possible outcomes for our patients.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Left Column -->
+    <div class="footer-left">
+      <div class="footer-location">
+        <i class="fas fa-map-marker-alt footer-icon"></i>
+        <a href="https://g.co/kgs/E7hs7y7" class="footer-link">
+          National Highway 1A Patli Morh, Samba,<br/> Jammu and Kashmir Pincode-181133
+        </a>
+      </div>
+
+      <div class="footer-social">
+
+        <a href="https://www.instagram.com/balajipolyclinic1a/?hl=en">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Instagram_white.svg" alt="Instagram"></a>
+	<a href="https://www.instagram.com/balajipolyclinic1a/?hl=en" class="footer-insta">Instagram</a>
+     	 </div>
+        
+ <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61564872581052">
+          <img src="facebook.png" alt="Facebook" ></a>
+<a href="https://www.facebook.com/profile.php?id=61564872581052" class="footer-fb" >Facebook</a>
+	
+
+      </div>
+    </div>
+    <!-- Right Column -->
+    <div class="footer-right">
+      <div class="footer-contact">
+        <i class="fas fa-phone-alt fa-flip-horizontal footer-icon"></i>
+        <a href="tel:8082232088" class="footer-link">8082232088 (Reception)</a>
+      </div>
+      <div class="footer-contact">
+        <i class="fas fa-phone-alt fa-flip-horizontal footer-icon"></i>
+        <a href="tel:9796081106" class="footer-link">9796081106 (Dental Services)</a>
+      </div>
+      <div class="footer-contact">
+        <i class="fas fa-phone-alt fa-flip-horizontal footer-icon"></i>
+        <a href="tel:9697286205" class="footer-link">9697286205</a>
+      </div>
+      <div class="footer-contact">
+        <i class="fas fa-envelope footer-icon"></i>
+        <a href="mailto:balajipolyclinic1a@gmail.com" class="footer-link">
+          balajipolyclinic1a@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <script>
+    let slides = document.querySelectorAll('.carousel-slide');
+    let currentIndex = 0;
+    let leftArrow = document.querySelector('.arrow.left');
+    let rightArrow = document.querySelector('.arrow.right');
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    rightArrow.addEventListener('click', nextSlide);
+    leftArrow.addEventListener('click', prevSlide);
+
+    // Auto play
+    setInterval(nextSlide, 5000);
+</script>
+</body>
+</html>
