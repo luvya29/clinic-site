@@ -230,83 +230,45 @@
   <h1>Dashboard</h1>
 </section>
 
-<button onclick="addPatient()">Add</button>
-
 <script>
-async function addPatient() {
-  await fetch("https://clinic-site-ysbc.onrender.com", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: "John",
-      treatment: "Dental",
-      total_amount: 10000
-    })
-  });
-}
-</script>
-
-<button onclick="download()">Download Excel</button>
-
-<script>
-async function download() {
-  const res = await fetch("https://your-render-url/patients");
-  const data = await res.json();
-
-  let csv = "Name,Treatment,Total,Paid,Balance\n";
-
-  data.forEach(p => {
-    csv += `${p.name},${p.treatment},${p.total_amount},${p.paid_amount},${p.balance}\n`;
-  });
-
-  const blob = new Blob([csv]);
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "patients.csv";
-  a.click();
-}
-</script>
-
-<h2>Patients List</h2>
-
-<table border="1" id="patientsTable">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Treatment</th>
-      <th>Total</th>
-      <th>Paid</th>
-      <th>Balance</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-
-	<script>
 async function loadPatients() {
-  const res = await fetch("https://clinic-site-ysbc.onrender.com");
-  const data = await res.json();
+  try {
+    console.log("Fetching patients...");
 
-  const table = document.querySelector("#patientsTable tbody");
-  table.innerHTML = "";
+    const res = await fetch("https://your-render-url/patients");
+    console.log("Response status:", res.status);
 
-  data.forEach(p => {
-    const row = `
-      <tr>
-        <td>${p.name}</td>
-        <td>${p.treatment}</td>
-        <td>${p.total_amount}</td>
-        <td>${p.paid_amount}</td>
-        <td>${p.balance}</td>
-      </tr>
-    `;
-    table.innerHTML += row;
-  });
+    if (!res.ok) {
+      console.error("Failed to fetch patients data:", res.statusText);
+      return;
+    }
+
+    const data = await res.json();
+    console.log("Patients data:", data);
+
+    const table = document.querySelector("#patientsTable tbody");
+    table.innerHTML = ""; // Clear existing rows
+
+    data.forEach(p => {
+      const row = `
+        <tr>
+          <td>${p.name}</td>
+          <td>${p.treatment}</td>
+          <td>${p.total_amount}</td>
+          <td>${p.paid_amount}</td>
+          <td>${p.balance}</td>
+        </tr>
+      `;
+      table.innerHTML += row;
+    });
+    console.log("Table updated with patients.");
+  } catch (error) {
+    console.error("Error loading patients:", error);
+  }
 }
 
-// load automatically when page opens
+// Call it when the page loads
 loadPatients();
 </script>
-	
   </body>
 </html>
