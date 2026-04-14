@@ -1,7 +1,6 @@
 {
   "name": "clinic-site",
   "version": "1.0.0",
-  "description": "clinic backend",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
