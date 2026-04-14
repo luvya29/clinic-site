@@ -1,10 +1,15 @@
-
 const express = require("express");
 const { Pool } = require("pg");
+const path = require("path");
+
 const app = express();
 
 app.use(express.json());
 
+// ✅ Serve frontend FIRST
+app.use(express.static(__dirname));
+
+// Database connection
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
@@ -55,20 +60,12 @@ app.get("/logs/:id", async (req, res) => {
   res.json(result.rows);
 });
 
-app.listen(3000, () => console.log("Server running"));
-
-
-
-
-// Serve static files
-app.use(express.static(__dirname));
-
-// Home route
+// Homepage
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// ✅ VERY IMPORTANT LINE
+// ✅ ONLY ONE LISTEN
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
