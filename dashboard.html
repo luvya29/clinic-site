@@ -246,5 +246,27 @@ async function addPatient() {
 }
 </script>
 
+<button onclick="download()">Download Excel</button>
+
+<script>
+async function download() {
+  const res = await fetch("https://your-render-url/patients");
+  const data = await res.json();
+
+  let csv = "Name,Treatment,Total,Paid,Balance\n";
+
+  data.forEach(p => {
+    csv += `${p.name},${p.treatment},${p.total_amount},${p.paid_amount},${p.balance}\n`;
+  });
+
+  const blob = new Blob([csv]);
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "patients.csv";
+  a.click();
+}
+</script>
+
+
   </body>
 </html>
